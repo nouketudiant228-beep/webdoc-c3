@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saveurs de France - Web Documentaire Culinaire</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDF8F0;
+            color: #2C2C2C;
+            line-height: 1.6;
+        }
+
+        /* ===== TYPOGRAPHIE ===== */
+        h1, h2, h3, .logo, .nav-links a {
+            font-family: 'Playfair Display', serif;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #722F37;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #722F37;
+            margin-bottom: 0.75rem;
+        }
+
+        .subtitle {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #6B6B6B;
+            font-style: italic;
+        }
+
+        /* ===== LAYOUT ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            background: linear-gradient(135deg, #722F37 0%, #5a252b 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            gap: 0;
+        }
+
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            flex-shrink: 0;
+        }
+
+        .logo span {
+            color: #D4A373;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #D4A373;
+        }
+
+        /* ===== SECTIONS ===== */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page-section.active-section {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== HERO SECTION (ACCUEIL) ===== */
+        .hero {
+            padding: 0;
+            background: linear-gradient(rgba(114, 47, 55, 0.04), rgba(212, 163, 115, 0.08));
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* ===== FOND ANIMÉ ILLUSTRATIONS CULINAIRES ===== */
+        .hero-bg-canvas {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        .food-icon {
+            position: absolute;
+            opacity: 0;
+            color: #7a2f37;
+            font-size: 2rem;
+            animation: floatIcon linear infinite;
+            user-select: none;
+            pointer-events: none;
+        }
+        @keyframes floatIcon {
+            0%   { opacity: 0;    transform: translateY(0px)   rotate(0deg)   scale(0.8); }
+            10%  { opacity: 0.13; }
+            85%  { opacity: 0.13; }
+            100% { opacity: 0;    transform: translateY(-110px) rotate(20deg) scale(1.05); }
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 7rem;
+            align-items: center;
+            min-height: 420px;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-content p {
+            font-size: 1.125rem;
+            color: #6B6B6B;
+            margin: 1.25rem 0 0 0;
+        }
+
+        .hero-content .subtitle {
+            margin-top: 0.75rem;
+        }
+
+        /* Cadre portrait chef cuisinier */
+        .chef-portrait-frame {
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: 0 6px 16px -6px rgba(0,0,0,0.15);
+            aspect-ratio: 3 / 4;
+            width: 100%;
+            max-width: 340px;
+            margin: 0 auto;
+            align-self: center;
+        }
+
+        .chef-portrait-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* CADRE VIDÉO INTRO — centré, largeur maximale */
+        .intro-video-block {
+            margin: 4rem auto 0 auto;
+            max-width: 950px;
+            padding: 0 2rem;
+        }
+
+        .intro-video-block .section-intro {
+            margin-bottom: 2rem;
+        }
+
+        .video-hero-wrapper {
+            position: relative;
+            width: 100%;
+            background: #000;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-hero-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 6px;
+        }
+
+        /* Placeholder pour vidéo (à remplacer par vraie vidéo) */
+        .video-placeholder-intro {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);
+            color: #D4A373;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            flex-direction: column;
+            gap: 0.8rem;
+            cursor: pointer;
+        }
+
+        .video-placeholder-intro span:first-child {
+            font-size: 3.5rem;
+        }
+
+        .video-caption-intro {
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: 500;
+            color: #722F37;
+            font-size: 0.95rem;
+        }
+
+        /* ===== SPECIALITIES SECTION ===== */
+        .specialities {
+            padding: 4rem 0 5rem 0;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem auto;
+            color: #6B6B6B;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.11);
+        }
+
+        .card-image {
+            height: 200px;
+            background: linear-gradient(135deg, #722F37 0%, #D4A373 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            overflow: hidden;
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        .card-content p {
+            color: #6B6B6B;
+            margin-top: 0.5rem;
+        }
+
+        .region-tag {
+            display: inline-block;
+            background-color: #FDF8F0;
+            color: #722F37;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            margin-top: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* ===== PAGE DOCUMENTAIRE ===== */
+        .map-showcase {
+            margin-top: 1rem;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .interactive-map-card {
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            cursor: pointer;
+        }
+
+        .map-background-section {
+            background-image: url('Images/CarteInteractiveImage.jpg');
+            background-size: cover;
+            background-position: center 30%;
+            background-repeat: no-repeat;
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 3rem 2rem;
+        }
+
+        .map-background-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+        }
+
+        .map-btn-centered {
+            position: relative;
+            z-index: 2;
+            background: #722F37;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 600;
+            padding: 1rem 2.5rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-family: 'Inter', sans-serif;
+            transition: background 0.2s ease;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .map-btn-centered:hover {
+            background-color: #D4A373;
+            color: #2C2C2C;
+        }
+
+        .map-caption {
+            background: rgba(253, 248, 240, 0.92);
+            padding: 1.5rem;
+            text-align: left;
+            border-left: 5px solid #D4A373;
+        }
+
+        .map-caption h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== PAGE REPORTAGE ===== */
+        .video-container {
+            background: white;
+            border-radius: 6px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            margin-top: 1rem;
+            max-width: 950px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .reportage-video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            background: #000;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+        
+        .reportage-video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 4px;
+        }
+        
+        .reportage-placeholder {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #2C2C2C 0%, #1a1a1a 100%);
+            color: #D4A373;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        
+        .restaurant-info {
+            background: #FDF8F0;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-top: 1.5rem;
+            border-left: 4px solid #D4A373;
+        }
+        
+        .restaurant-info h4 {
+            color: #722F37;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+        }
+
+        /* ===== PAGE RESSOURCES ===== */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .resource-category {
+            background: white;
+            border-radius: 6px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        
+        .resource-category h3 {
+            border-bottom: 2px solid #D4A373;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-item {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        
+        .resource-item:last-child {
+            border-bottom: none;
+        }
+        
+        .resource-thumb {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #722F37 0%, #D4A373 100%);
+            border-radius: 4px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            overflow: hidden;
+        }
+        
+        .resource-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .resource-info {
+            flex: 1;
+        }
+        
+        .resource-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .resource-info p {
+            font-size: 0.8rem;
+            color: #6B6B6B;
+        }
+        
+        .resource-link {
+            color: #722F37;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+        }
+        
+        .resource-link:hover {
+            color: #D4A373;
+        }
+
+        #page-documentaire,
+        #page-reportage {
+            padding: 4rem 0 5rem 0;
+        }
+
+        /* ===== ANIMATION TITRE DÉROULANT ===== */
+        @keyframes slideInFromLeft {
+            from {
+                clip-path: inset(0 100% 0 0);
+                opacity: 0;
+            }
+            to {
+                clip-path: inset(0 0% 0 0);
+                opacity: 1;
+            }
+        }
+        #hero-title {
+            animation: slideInFromLeft 10s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+        #hero-subtitle {
+            animation: slideInFromLeft 11s cubic-bezier(0.22, 1, 0.36, 1) 1.5s both;
+        }
+        #title-documentaire,
+        #title-reportage {
+            animation: none;
+        }
+        #title-documentaire.animate,
+        #title-reportage.animate {
+            animation: slideInFromLeft 10s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        /* ===== LOGO SVG HEADER ===== */
+        .logo-svg-header {
+            display: flex;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .logo-svg-header svg {
+            height: 54px;
+            width: auto;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background-color: #2C2C2C;
+            color: #FDF8F0;
+            padding: 3rem 0 2rem;
+            margin-top: 2rem;
+        }
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .footer-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.4rem;
+        }
+
+        .footer-content p {
+            color: #a0a0a0;
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        /* Cadre logo institution (cercle) */
+        .footer-institution-logo {
+            width: 76px;
+            height: 76px;
+            border-radius: 50%;
+            border: 2px solid #D4A373;
+            background: #3a3a3a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .footer-institution-logo:hover {
+            border-color: #f0c07a;
+            transform: scale(1.07);
+        }
+        .footer-institution-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+        .footer-institution-logo .inst-placeholder {
+            font-size: 0.58rem;
+            color: #a0a0a0;
+            text-align: center;
+            line-height: 1.35;
+            padding: 0.4rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #logo-pastille {
+            font-size: 0.58rem;
+            width: 20%;
+            height: 20%;
+            object-fit: contain;
+            border-radius: 50%;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+                min-height: unset;
+            }
+
+            .chef-portrait-frame {
+                max-width: 260px;
+            }.container {
+                padding: 0 1rem;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .nav-links {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .map-background-section {
+                min-height: 380px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-background-section {
+                min-height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo-svg-header">
+                <svg viewBox="0 0 680 200" role="img" xmlns="http://www.w3.org/2000/svg">
+                  <defs><mask id="text-gaps-hdr" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="680" height="200" fill="white"/><rect x="196" y="72.8" width="230.1" height="47.2" fill="black" rx="2"/><rect x="196" y="117.8" width="150.05" height="47.2" fill="black" rx="2"/><rect x="196" y="165.6" width="216.275" height="16.8" fill="black" rx="2"/><rect x="180" y="110" width="28" height="28.8" fill="black" rx="2"/></mask></defs>
+                  <rect x="10" y="10" width="660" height="180" rx="12" fill="#6b1a2a"/>
+                  <rect x="20" y="20" width="640" height="160" rx="8" fill="none" stroke="#c9a96e" stroke-width="1" stroke-dasharray="4 3" opacity="0.5"/>
+                  <ellipse cx="108" cy="165" rx="52" ry="7" fill="#3a0d18" opacity="0.4"/>
+                  <path d="M60 130 Q60 170 108 170 Q156 170 156 130 Z" fill="#d4854a"/>
+                  <path d="M58 128 Q58 134 108 134 Q158 134 158 128 Q158 122 108 122 Q58 122 58 128 Z" fill="#e8995a"/>
+                  <ellipse cx="108" cy="128" rx="50" ry="8" fill="none" stroke="#f0aa70" stroke-width="2.5"/>
+                  <path d="M63 132 Q63 162 108 165 Q153 162 153 132 Q130 138 108 137 Q86 138 63 132 Z" fill="#8b1a1a"/>
+                  <path d="M66 134 Q80 140 108 139 Q136 140 150 134 Q136 137 108 137 Q80 137 66 134 Z" fill="#a02020" opacity="0.6"/>
+                  <ellipse cx="88" cy="145" rx="11" ry="8" fill="#5c2a0e"/><ellipse cx="88" cy="143" rx="10" ry="7" fill="#7a3a18"/>
+                  <ellipse cx="116" cy="148" rx="10" ry="7" fill="#5c2a0e"/><ellipse cx="116" cy="146" rx="9" ry="6" fill="#7a3a18"/>
+                  <ellipse cx="138" cy="143" rx="8" ry="6" fill="#5c2a0e"/><ellipse cx="138" cy="141" rx="7" ry="5" fill="#7a3a18"/>
+                  <ellipse cx="96" cy="135" rx="6" ry="4" fill="#e07020"/><ellipse cx="126" cy="138" rx="5" ry="3.5" fill="#e07020"/>
+                  <path d="M76 138 Q76 133 82 133 Q88 133 88 138 Z" fill="#d4b896"/>
+                  <path d="M144 136 Q144 131 149 131 Q154 131 154 136 Z" fill="#d4b896"/>
+                  <circle cx="108" cy="132" r="4" fill="#2d7a2d"/><circle cx="100" cy="130" r="3" fill="#2d7a2d"/>
+                  <circle cx="116" cy="131" r="3" fill="#2d7a2d"/><circle cx="108" cy="130" r="2.5" fill="#3d9a3d"/>
+                  <path d="M90 118 Q88 112 91 106 Q94 100 92 94" fill="none" stroke="#f5f0e8" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                  <path d="M108 115 Q106 108 109 102 Q112 96 110 90" fill="none" stroke="#f5f0e8" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                  <path d="M126 118 Q124 111 127 105 Q130 99 128 93" fill="none" stroke="#f5f0e8" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                  <text x="200" y="110" style="fill:#f5f0e8;font-family:Georgia,serif;font-size:38px;font-weight:700;">Saveurs de</text>
+                  <text x="200" y="155" style="fill:#c9a96e;font-family:Georgia,serif;font-size:38px;font-weight:700;">France</text>
+                  <line x1="200" y1="165" x2="560" y2="165" stroke="#c9a96e" stroke-width="0.8" opacity="0.6" mask="url(#text-gaps-hdr)"/>
+                  <text x="200" y="178" style="fill:#a08050;font-family:Georgia,serif;font-size:11px;">GASTRONOMIE &amp; TERROIR</text>
+                  <text x="184" y="132" font-family="Georgia,serif" font-size="22" fill="#c9a96e" opacity="0.7">❧</text>
+                </svg>
+            </div>
+            <ul class="nav-links">
+                <li><a data-page="accueil" class="active"> Accueil </a></li>
+                <li><a data-page="documentaire"> Carte interactive </a></li>
+                <li><a data-page="reportage"> Reportage </a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- PAGE ACCUEIL -->
+        <section id="page-accueil" class="page-section active-section">
+            <div class="hero">
+                <!-- Fond animé illustrations culinaires -->
+                <div class="hero-bg-canvas" id="heroBgCanvas"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 id="hero-title">Saveurs de France</h1>
+                        <p class="subtitle" id="hero-subtitle">Un web documentaire au cœur des traditions culinaires françaises</p>
+                        <p> Chaque région cache un trésor. Chaque plat raconte une histoire. Ce documentaire vous emmène là où la France a encore le goût de ses origines.
+                        </p>
+                    </div>
+                    <!-- REMPLACEMENT : cadre portrait chef cuisinier (à la place de l'ancienne citation) -->
+                    <div class="chef-portrait-frame" style="margin-left: 5rem; margin-right: 0;">
+                        <img src="Images/Chef cuisinier.jpg" alt="Chef cuisinier en action - portrait professionnel">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CADRE VIDÉO INTRO : centré et bien proportionné -->
+            <div class="intro-video-block">
+                <div class="section-intro">
+                        <h2>Vidéo d'introduction</h2>
+                        <p>Comment le plat peut-il incarner l'identité d'un région ?</p>
+                </div>
+
+                <div class="video-hero-wrapper">
+                    <!-- ============================================================
+                         ▶ VIDÉO YOUTUBE — PAGE ACCUEIL
+                         Remplacez VOTRE_ID_VIDEO_1 par l'ID de votre vidéo YouTube.
+                         Exemple : https://www.youtube.com/watch?v=dQw4w9WgXcQ → ID = dQw4w9WgXcQ
+                         ============================================================ -->
+                    <iframe
+                        src="https://www.youtube.com/watch?v=CwIXMJTEUhM"
+                        title="Vidéo d'introduction — Saveurs de France"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="specialities">
+                <div class="container">
+                    <div class="section-intro">
+                        <h2>Spécialités emblématiques</h2>
+                        <p>Un patrimoine culinaire d'une richesse inégalée, façonné par les terroirs et les traditions.</p>
+                    </div>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="Images/cassoulet1.jpg" alt="Image Cassoulet toulousain" onerror="this.src='https://placehold.co/400x300/722F37/white?text=Cassoulet'">
+                            </div>
+                            <div class="card-content">
+                                <h3>Cassoulet</h3>
+                                <p>Mijoté de haricots blancs, confit de canard et saucisse. Plat emblématique du Sud-Ouest.</p>
+                                <span class="region-tag">Occitanie</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="Images/Bouillabaise1.jpg" alt="Image Bouillabaisse" onerror="this.src='https://placehold.co/400x300/D4A373/white?text=Bouillabaisse'">
+                            </div>
+                            <div class="card-content">
+                                <h3>Bouillabaisse</h3>
+                                <p>Soupe de poisson traditionnelle, riche en saveurs méditerranéennes, safran et rouille.</p>
+                                <span class="region-tag">Provence</span>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img src="Images/KouighAmman1.jpg" alt="Image Kouign-Amann" onerror="this.src='https://placehold.co/400x300/5a252b/white?text=Kouign-Amann'">
+                            </div>
+                            <div class="card-content">
+                                <h3>Kouign-Amann</h3>
+                                <p>Gâteau breton au beurre salé et au sucre, caramélisé et incroyablement gourmand.</p>
+                                <span class="region-tag">Bretagne</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                
+            </div>
+        </section>
+
+        <!-- PAGE DOCUMENTAIRE (CARTE INTERACTIVE AMÉLIORÉE AVEC SURVOL ET GRANDE HAUTEUR) -->
+        <section id="page-documentaire" class="page-section">
+            <div class="container">
+                <h2 id="title-documentaire">📌 Carte interactive des terroirs</h2>
+                <p style="color: #6B6B6B; margin-bottom: 2rem;">Explorez la richesse gastronomique française à travers notre carte interactive immersive.</p>
+                
+                <div class="map-showcase">
+                    <!-- Fusion totale : l'image en background + bouton central + description intégrée -->
+                    <div class="interactive-map-card">
+                        <div class="map-background-section" style="background-image: url('Images/CarteInteractiveImage.jpg');">
+                            <!-- Bouton central élégant -->
+                            <a href="https://view.genially.com/69bd016f9b2bfee391dce010" class="map-btn-centered" target="_blank">
+                                🌍 Découvrir le web documentaire interactif →
+                            </a>
+                        </div>
+                        <div class="map-caption">
+                            <h3 style="font-size: 1.3rem;">🍽️ À propos de ce documentaire immersif</h3>
+                            <p>Ce web documentaire interactif vous propose un voyage à travers les régions françaises pour découvrir les spécialités culinaires, les producteurs passionnés et les traditions qui façonnent notre patrimoine gastronomique. Cliquez sur la carte pour une expérience augmentée.</p>
+                            <p style="margin-top: 0.5rem; font-weight: 500;">✨ Survolez la carte : elle s'anime et vous invite à l'exploration.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE REPORTAGE -->
+        <section id="page-reportage" class="page-section">
+            <div class="container">
+                <h2 id="title-reportage">🎬 Immersion dans les saveurs Occitanes</h2>
+                <p style="color: #6B6B6B; margin-bottom: 1rem;">Découvrez notre immersion dans un restaurant et une confisserie d'exception.</p>
+                
+                <div class="video-container">
+                    <div class="reportage-video-wrapper">
+                        <!-- ============================================================
+                             ▶ VIDÉO YOUTUBE — PAGE REPORTAGE
+                             Remplacez VOTRE_ID_VIDEO_2 par l'ID de votre vidéo YouTube.
+                             Exemple : https://www.youtube.com/watch?v=dQw4w9WgXcQ → ID = dQw4w9WgXcQ
+                             ============================================================ -->
+                        <iframe
+                            src="https://www.youtube.com/watch?v=lKQTW4SE0Ek"
+                            title="Reportage — Immersion dans les saveurs Occitanes"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    
+                    <div class="restaurant-info">
+                        <h4>🍽️ Restaurant Bouillon Capitole (Toulouse) & Confisserie Paradis Gourmands</h4>
+                        <p><strong>Pourquoi ce reportage ?</strong> Nous avons choisi d'explorer nous-mêmes les saveurs Toulousaines en visitant ces deux endroits dont les produits reflètent les spécialités culinaires et plus globalement la culture toulousaine et donc occitane. </p>
+                        <p style="margin-top: 0.75rem; font-style: italic; color: #722F37;">📅 Reportage réalisé en Mi-Mai 2026 par : </p>
+                        <p style="margin-top: 0.75rem; font-style: italic; color: #722F37;">
+                            <li>
+                                <ul> - Maelys PRATI </ul>
+                                <ul> - Intisar BINTI MOHAMMAD ZAÏDIR </ul>
+                                <ul> - Yao DOSSAVI</ul>
+                            </li>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-left">
+                <div class="logo" style="color: #D4A373;">Saveurs de France</div>
+                <p>Web documentaire culinaire - Un voyage au cœur des traditions françaises</p>
+                <p>© 2026 - Tous droits réservés</p>
+            </div>
+
+            
+            <!-- Logo institution : remplacez <span> par <img src="votre-logo.png" alt="Nom institution"> -->
+            <div class="footer-institution-logo" title="Logo de votre institution">
+                <img src="Images/PASTILLE_PROJ_ETUDIANT_TOULOUSE_SAUMON.png" alt="Nom instituition">
+
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-links a');
+        const sections = document.querySelectorAll('.page-section');
+        
+        function switchPage(pageId) {
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+            });
+            
+            const targetSection = document.getElementById(`page-${pageId}`);
+            if (targetSection) {
+                targetSection.classList.add('active-section');
+            }
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === pageId) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Relancer l'animation des titres h2 des onglets
+            ['title-documentaire', 'title-reportage'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) {
+                    el.classList.remove('animate');
+                    void el.offsetWidth;
+                    el.classList.add('animate');
+                }
+            });
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                if (page) {
+                    switchPage(page);
+                    // Relance l'animation du titre à chaque retour sur l'Accueil
+                    if (page === 'accueil') {
+                        ['hero-title', 'hero-subtitle'].forEach(id => {
+                            const el = document.getElementById(id);
+                            if (el) {
+                                el.style.animation = 'none';
+                                void el.offsetWidth; // force reflow
+                                el.style.animation = '';
+                            }
+                        });
+                    }
+                }
+            });
+        });
+
+        // ===== FOND ANIMÉ ILLUSTRATIONS CULINAIRES =====
+        const foodEmojis = [
+            '🥐','🍕','🧀','🍷','🥖','🫕','🍳','🥗','🫙','🍮',
+            '🧅','🥩','🍲','🫒','🥕','🌿','🍅','🍇','🫐','🥜',
+            '🫖','☕','🍯','🧄','🥨','🍋','🌾','🧈','🫙','🍾',
+            '🥣','🫕','🍱','🥘','🧆','🥐','🍶','🫗','🥫','🍄'
+        ];
+
+        function spawnFoodIcon(canvas) {
+            const el = document.createElement('span');
+            el.className = 'food-icon';
+            el.textContent = foodEmojis[Math.floor(Math.random() * foodEmojis.length)];
+            const size = 1.4 + Math.random() * 1.4; // 1.4rem – 2.8rem
+            el.style.fontSize = size + 'rem';
+            el.style.left = (Math.random() * 100) + '%';
+            el.style.bottom = (-3 + Math.random() * 10) + '%';
+            const dur = 9 + Math.random() * 14; // 9s – 23s
+            el.style.animationDuration = dur + 's';
+            el.style.animationDelay = (Math.random() * -dur) + 's';
+            canvas.appendChild(el);
+            // Nettoyage après fin d'animation
+            el.addEventListener('animationiteration', () => {
+                el.style.left = (Math.random() * 100) + '%';
+                el.style.fontSize = (1.4 + Math.random() * 1.4) + 'rem';
+            });
+        }
+
+        function initHeroBg() {
+            const canvas = document.getElementById('heroBgCanvas');
+            if (!canvas) return;
+            canvas.innerHTML = '';
+            const count = 38;
+            for (let i = 0; i < count; i++) spawnFoodIcon(canvas);
+        }
+
+        initHeroBg();
+
+        // Relancer les icônes quand on revient sur Accueil
+        const _origSwitchPage = switchPage;
+        // (already patched above via navLinks listener — we just re-init bg)
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (link.getAttribute('data-page') === 'accueil') {
+                    initHeroBg();
+                }
+            });
+        });
+        // Simple gestion : si la vidéo a une source valide, on pourrait cacher le placeholder.
+        // mais on laisse tel quel pour que l'utilisateur mette son fichier.
+        const videoIntro = document.querySelector('.video-hero-wrapper video');
+        const placeholderIntro = document.getElementById('videoPlaceholderIntro');
+        if(videoIntro && placeholderIntro) {
+            videoIntro.addEventListener('loadeddata', () => {
+                if(placeholderIntro) placeholderIntro.style.display = 'none';
+            });
+            videoIntro.addEventListener('error', () => {
+                // si pas de source, le placeholder reste
+            });
+        }
+    </script>
+</body>
+</html>

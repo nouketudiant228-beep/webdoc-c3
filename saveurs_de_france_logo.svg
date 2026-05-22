@@ -1,0 +1,69 @@
+<svg width="100%" viewBox="0 0 680 200" role="img" xmlns="http://www.w3.org/2000/svg" style=""><defs><mask id="imagine-text-gaps-qe6ywh" maskUnits="userSpaceOnUse"><rect x="0" y="0" width="680" height="200" fill="white"/><rect x="196" y="72.80000305175781" width="230.10000610351562" height="47.20000076293945" fill="black" rx="2"/><rect x="196" y="117.80000305175781" width="150.0500030517578" height="47.20000076293945" fill="black" rx="2"/><rect x="196" y="165.60000610351562" width="216.27500915527344" height="16.800000190734863" fill="black" rx="2"/><rect x="180" y="110" width="28" height="28.80000114440918" fill="black" rx="2"/></mask></defs>
+  <title style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Logo Saveurs de France</title>
+  <desc style="fill:rgb(0, 0, 0);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto">Logo cartoon avec un bœuf bourguignon et le texte Saveurs de France</desc>
+
+  
+
+  <!-- Background pill -->
+  <rect x="10" y="10" width="660" height="180" rx="12" fill="#6b1a2a" style="fill:rgb(107, 26, 42);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Decorative thin border -->
+  <rect x="20" y="20" width="640" height="160" rx="8" fill="none" stroke="#c9a96e" stroke-width="1" stroke-dasharray="4 3" opacity="0.5" style="fill:none;stroke:rgb(201, 169, 110);color:rgb(255, 255, 255);stroke-width:1px;stroke-dasharray:4px, 3px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- ===== CARTOON BŒUF BOURGUIGNON BOWL ===== -->
+  <!-- Shadow sous le bol -->
+  <ellipse cx="108" cy="165" rx="52" ry="7" fill="#3a0d18" opacity="0.4" style="fill:rgb(58, 13, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.4;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Bol principal -->
+  <path d="M60 130 Q60 170 108 170 Q156 170 156 130 Z" fill="#d4854a" style="fill:rgb(212, 133, 74);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M58 128 Q58 134 108 134 Q158 134 158 128 Q158 122 108 122 Q58 122 58 128 Z" fill="#e8995a" style="fill:rgb(232, 153, 90);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Rim du bol (bord) -->
+  <ellipse cx="108" cy="128" rx="50" ry="8" fill="none" stroke="#f0aa70" stroke-width="2.5" style="fill:none;stroke:rgb(240, 170, 112);color:rgb(255, 255, 255);stroke-width:2.5px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Bouillon / sauce bordeaux dans le bol -->
+  <path d="M63 132 Q63 162 108 165 Q153 162 153 132 Q130 138 108 137 Q86 138 63 132 Z" fill="#8b1a1a" style="fill:rgb(139, 26, 26);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M66 134 Q80 140 108 139 Q136 140 150 134 Q136 137 108 137 Q80 137 66 134 Z" fill="#a02020" opacity="0.6" style="fill:rgb(160, 32, 32);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.6;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Morceaux de bœuf (petites formes rondes marron) -->
+  <ellipse cx="88" cy="145" rx="11" ry="8" fill="#5c2a0e" style="fill:rgb(92, 42, 14);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <ellipse cx="88" cy="143" rx="10" ry="7" fill="#7a3a18" style="fill:rgb(122, 58, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <ellipse cx="116" cy="148" rx="10" ry="7" fill="#5c2a0e" style="fill:rgb(92, 42, 14);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <ellipse cx="116" cy="146" rx="9" ry="6" fill="#7a3a18" style="fill:rgb(122, 58, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <ellipse cx="138" cy="143" rx="8" ry="6" fill="#5c2a0e" style="fill:rgb(92, 42, 14);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <ellipse cx="138" cy="141" rx="7" ry="5" fill="#7a3a18" style="fill:rgb(122, 58, 24);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Carottes oranges -->
+  <ellipse cx="96" cy="135" rx="6" ry="4" fill="#e07020" style="fill:rgb(224, 112, 32);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <ellipse cx="126" cy="138" rx="5" ry="3.5" fill="#e07020" style="fill:rgb(224, 112, 32);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Champignons (petits demi-cercles beige) -->
+  <path d="M76 138 Q76 133 82 133 Q88 133 88 138 Z" fill="#d4b896" style="fill:rgb(212, 184, 150);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M144 136 Q144 131 149 131 Q154 131 154 136 Z" fill="#d4b896" style="fill:rgb(212, 184, 150);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Herbes (persil vert) -->
+  <circle cx="108" cy="132" r="4" fill="#2d7a2d" style="fill:rgb(45, 122, 45);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="100" cy="130" r="3" fill="#2d7a2d" style="fill:rgb(45, 122, 45);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="116" cy="131" r="3" fill="#2d7a2d" style="fill:rgb(45, 122, 45);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <circle cx="108" cy="130" r="2.5" fill="#3d9a3d" style="fill:rgb(61, 154, 61);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Petite vapeur cartoon -->
+  <path d="M90 118 Q88 112 91 106 Q94 100 92 94" fill="none" stroke="#f5f0e8" stroke-width="2" stroke-linecap="round" opacity="0.5" style="fill:none;stroke:rgb(245, 240, 232);color:rgb(255, 255, 255);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M108 115 Q106 108 109 102 Q112 96 110 90" fill="none" stroke="#f5f0e8" stroke-width="2" stroke-linecap="round" opacity="0.5" style="fill:none;stroke:rgb(245, 240, 232);color:rgb(255, 255, 255);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+  <path d="M126 118 Q124 111 127 105 Q130 99 128 93" fill="none" stroke="#f5f0e8" stroke-width="2" stroke-linecap="round" opacity="0.5" style="fill:none;stroke:rgb(245, 240, 232);color:rgb(255, 255, 255);stroke-width:2px;stroke-linecap:round;stroke-linejoin:miter;opacity:0.5;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- ===== TEXTE DU LOGO ===== -->
+  <!-- "Saveurs de" -->
+  <text x="200" y="110" style="fill:rgb(245, 240, 232);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:38px;font-weight:700;text-anchor:start;dominant-baseline:auto">Saveurs de</text>
+  <!-- "France" en doré -->
+  <text x="200" y="155" style="fill:rgb(201, 169, 110);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, &quot;Times New Roman&quot;, serif;font-size:38px;font-weight:700;text-anchor:start;dominant-baseline:auto">France</text>
+
+  <!-- Ligne décorative entre les mots et le tagline -->
+  <line x1="200" y1="165" x2="560" y2="165" stroke="#c9a96e" stroke-width="0.8" opacity="0.6" mask="url(#imagine-text-gaps-qe6ywh)" style="fill:rgb(0, 0, 0);stroke:rgb(201, 169, 110);color:rgb(255, 255, 255);stroke-width:0.8px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.6;font-family:&quot;Anthropic Sans&quot;, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;font-size:16px;font-weight:400;text-anchor:start;dominant-baseline:auto"/>
+
+  <!-- Tagline -->
+  <text x="200" y="178" style="fill:rgb(160, 128, 80);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:1;font-family:Georgia, serif;font-size:11px;font-weight:400;text-anchor:start;dominant-baseline:auto">GASTRONOMIE &amp; TERROIR</text>
+
+  <!-- Petit fleuron décoratif à gauche du texte -->
+  <text x="184" y="132" font-family="Georgia,serif" font-size="22" fill="#c9a96e" opacity="0.7" style="fill:rgb(201, 169, 110);stroke:none;color:rgb(255, 255, 255);stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;opacity:0.7;font-family:Georgia, serif;font-size:22px;font-weight:400;text-anchor:start;dominant-baseline:auto">❧</text>
+</svg>
