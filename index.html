@@ -241,6 +241,78 @@
             border-radius: 6px;
         }
 
+        /* ===== CADRES IMAGE HYPERTEXTE ===== */
+        .img-link-frame {
+            display: block;
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            overflow: hidden;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .img-link-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        filter 0.45s ease;
+            transform-origin: center center;
+        }
+
+        .img-link-frame:hover img,
+        .img-link-frame:focus img {
+            transform: scale(1.06);
+            filter: brightness(0.82);
+        }
+
+        .img-link-frame:active img {
+            transform: scale(1.03);
+            transition-duration: 0.15s;
+        }
+
+        /* Overlay "▶ Voir la vidéo" affiché au survol */
+        .img-link-frame .img-link-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            background: rgba(114, 47, 55, 0);
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+            transition: background 0.45s ease, opacity 0.45s ease;
+            opacity: 0;
+            border-radius: 6px;
+            pointer-events: none;
+        }
+
+        .img-link-frame .img-link-overlay .play-icon {
+            font-size: 3rem;
+            line-height: 1;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+        }
+
+        .img-link-frame:hover .img-link-overlay,
+        .img-link-frame:focus .img-link-overlay {
+            background: rgba(114, 47, 55, 0.45);
+            opacity: 1;
+        }
+
+        /* Anneau de focus accessible */
+        .img-link-frame:focus-visible {
+            outline: 3px solid #D4A373;
+            outline-offset: 3px;
+        }
+
         /* Placeholder pour vidéo (à remplacer par vraie vidéo) */
         .video-placeholder-intro {
             position: absolute;
@@ -777,7 +849,7 @@
                     </div>
                     <!-- REMPLACEMENT : cadre portrait chef cuisinier (à la place de l'ancienne citation) -->
                     <div class="chef-portrait-frame" style="margin-left: 5rem; margin-right: 0;">
-                        <img src="Chef cuisinier.jpg" alt="Chef cuisinier">
+                        <img src="Images/Chef cuisinier.jpg" alt="Chef cuisinier en action - portrait professionnel">
                     </div>
                 </div>
             </div>
@@ -791,16 +863,21 @@
 
                 <div class="video-hero-wrapper">
                     <!-- ============================================================
-                         ▶ VIDÉO YOUTUBE — PAGE ACCUEIL
-                         Remplacez VOTRE_ID_VIDEO_1 par l'ID de votre vidéo YouTube.
-                         Exemple : https://www.youtube.com/watch?v=dQw4w9WgXcQ → ID = dQw4w9WgXcQ
+                         ▶ CADRE IMAGE HYPERTEXTE — PAGE ACCUEIL
+                         Remplacez href par le lien de votre vidéo / page cible.
+                         Remplacez src par votre image de couverture.
                          ============================================================ -->
-                    <iframe
-                        src="https://www.youtube.com/watch?v=CwIXMJTEUhM"
-                        title="Vidéo d'introduction — Saveurs de France"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen>
-                    </iframe>
+                    <a href="https://www.youtube.com/watch?v=CwIXMJTEUhM"
+                       class="img-link-frame"
+                       target="_blank"
+                       rel="noopener"
+                       title="Voir la vidéo d'introduction">
+                        <img src="Images/ImgCartoon.png" alt="Image Cartoon — vidéo d'introduction">
+                        <div class="img-link-overlay">
+                            <span class="play-icon">▶</span>
+                            <span>Voir la vidéo</span>
+                        </div>
+                    </a>
                 </div>
             </div>
 
@@ -813,7 +890,7 @@
                     <div class="cards-grid">
                         <div class="card">
                             <div class="card-image">
-                                <img src="cassoulet1.jpg" alt="Image Cassoulet toulousain" onerror="this.src='https://placehold.co/400x300/722F37/white?text=Cassoulet'">
+                                <img src="Images/cassoulet1.jpg" alt="Image Cassoulet toulousain" onerror="this.src='https://placehold.co/400x300/722F37/white?text=Cassoulet'">
                             </div>
                             <div class="card-content">
                                 <h3>Cassoulet</h3>
@@ -823,7 +900,7 @@
                         </div>
                         <div class="card">
                             <div class="card-image">
-                                <img src="Bouillabaise1.jpg" alt="" onerror="this.src='https://placehold.co/400x300/D4A373/white?text=Bouillabaisse'">
+                                <img src="Images/Bouillabaise1.jpg" alt="Image Bouillabaisse" onerror="this.src='https://placehold.co/400x300/D4A373/white?text=Bouillabaisse'">
                             </div>
                             <div class="card-content">
                                 <h3>Bouillabaisse</h3>
@@ -833,7 +910,7 @@
                         </div>
                         <div class="card">
                             <div class="card-image">
-                                <img src="KouighAmman1.jpg" alt="Image Kouign-Amann" onerror="this.src='https://placehold.co/400x300/5a252b/white?text=Kouign-Amann'">
+                                <img src="Images/KouighAmman1.jpg" alt="Image Kouign-Amann" onerror="this.src='https://placehold.co/400x300/5a252b/white?text=Kouign-Amann'">
                             </div>
                             <div class="card-content">
                                 <h3>Kouign-Amann</h3>
@@ -858,7 +935,7 @@
                 <div class="map-showcase">
                     <!-- Fusion totale : l'image en background + bouton central + description intégrée -->
                     <div class="interactive-map-card">
-                        <div class="map-background-section" style="background-image: url('CarteInteractiveImage.jpg');">
+                        <div class="map-background-section" style="background-image: url('Images/CarteInteractiveImage.jpg');">
                             <!-- Bouton central élégant -->
                             <a href="https://view.genially.com/69bd016f9b2bfee391dce010" class="map-btn-centered" target="_blank">
                                 🌍 Découvrir le web documentaire interactif →
@@ -881,18 +958,25 @@
                 <p style="color: #6B6B6B; margin-bottom: 1rem;">Découvrez notre immersion dans un restaurant et une confisserie d'exception.</p>
                 
                 <div class="video-container">
-                    <div class="reportage-video-wrapper">
+                    
+
+                    <div class="video-hero-wrapper">
                         <!-- ============================================================
-                             ▶ VIDÉO YOUTUBE — PAGE REPORTAGE
-                             Remplacez VOTRE_ID_VIDEO_2 par l'ID de votre vidéo YouTube.
-                             Exemple : https://www.youtube.com/watch?v=dQw4w9WgXcQ → ID = dQw4w9WgXcQ
-                             ============================================================ -->
-                        <iframe
-                            src="https://www.youtube.com/watch?v=lKQTW4SE0Ek"
-                            title="Reportage — Immersion dans les saveurs Occitanes"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
+                            ▶ CADRE IMAGE HYPERTEXTE — PAGE ACCUEIL
+                            Remplacez href par le lien de votre vidéo / page cible.
+                            Remplacez src par votre image de couverture.
+                            ============================================================ -->
+                        <a href="https://www.youtube.com/watch?v=lKQTW4SE0Ek"
+                        class="img-link-frame"
+                        target="_blank"
+                        rel="noopener"
+                        title="Voir la vidéo d'introduction">
+                            <img src="Images/ImgTestResto.png" alt="Image Cartoon — vidéo d'introduction">
+                            <div class="img-link-overlay">
+                                <span class="play-icon">▶</span>
+                                <span>Voir la vidéo</span>
+                            </div>
+                        </a>
                     </div>
                     
                     <div class="restaurant-info">
@@ -923,7 +1007,7 @@
             
             <!-- Logo institution : remplacez <span> par <img src="votre-logo.png" alt="Nom institution"> -->
             <div class="footer-institution-logo" title="Logo de votre institution">
-                <img src="PASTILLE_PROJ_ETUDIANT_TOULOUSE_SAUMON.png">
+                <img src="Images/PASTILLE_PROJ_ETUDIANT_TOULOUSE_SAUMON.png" alt="Nom instituition">
 
             </div>
         </div>
